@@ -1,6 +1,6 @@
 const { Schema,model } = require('mongoose');
 
-coming_soon_Schema = new Schema({
+comingSoonSchema = new Schema({
     //required:true
     id:{type:Number},
     logo_url: {type:String},
@@ -16,4 +16,4 @@ coming_soon_Schema = new Schema({
     versionKey:false
 })
 
-module.exports = model('coming_soon',coming_soon_Schema);
+module.exports = model('comingSoon',comingSoonSchema);
