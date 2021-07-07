@@ -1,8 +1,19 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3000;
+require('dotenv').config();
 
-const PORT = process.env.PORT || 3000
+//Database Connection
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser:true,
+    useCreateIndex:true,
+    useUnifiedTopology: true
+}).then(()=> console.log("Conectado a la base de datos"))
+  .catch((err)=> console.log("No conectado, error", err))
 
+  
+//Middleware
 app.use(express.json());
 
 //Routes
@@ -10,7 +21,7 @@ const billboard = require('./routes/billboard')
 const comingSoon = require('./routes/comingSoon')
  
 //Use routes
-app.use('/',billboard);
+app.use('/billboard',billboard);
 app.use('/comingSoon',comingSoon);
  
  
