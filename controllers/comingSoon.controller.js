@@ -12,7 +12,6 @@ comingSoonCtrl.createComingSoon = async (req,res) =>{
     res.send({message:'Coming soon created'})
 }
 
-
 comingSoonCtrl.getComingSoon = async(req,res) =>{
     const  comingSoon = await ComingSoon.findOne({_id:req.params.id})
     res.send( comingSoon);
@@ -26,7 +25,6 @@ comingSoonCtrl.editComingSoon = async(req,res) =>{
 comingSoonCtrl.deleteComingSoon = async(req,res) => {
     await ComingSoon.findByIdAndDelete(req.params.id);
     res.json({status:'Coming soon Deleted'});
-
 }
 
 module.exports = comingSoonCtrl ;

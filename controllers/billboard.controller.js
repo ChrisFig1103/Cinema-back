@@ -9,7 +9,7 @@ billboardCtrl.getBillboards = async (req,res) =>{
 billboardCtrl.createBillboard = async (req,res) =>{
     const newBillboard = new Billboard(req.body);
     await newBillboard.save();
-    res.send({message:'Mesa created'})
+    res.send({message:'Billboard created'})
 }
 
 billboardCtrl.getBillboard = async(req,res) =>{
@@ -25,7 +25,6 @@ billboardCtrl.editBillboard = async(req,res) =>{
 billboardCtrl.deleteBillboard = async(req,res) => {
     await Billboard.findByIdAndDelete(req.params.id);
     res.json({status:'Billboard Deleted'});
-
 }
 
 module.exports = billboardCtrl ;

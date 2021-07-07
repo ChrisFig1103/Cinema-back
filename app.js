@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
 
+
 //Database Connection
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser:true,
@@ -12,7 +13,6 @@ mongoose.connect(process.env.DATABASE_URL, {
 }).then(()=> console.log("Conectado a la base de datos"))
   .catch((err)=> console.log("No conectado, error", err))
 
-  
 //Middleware
 app.use(express.json());
 
